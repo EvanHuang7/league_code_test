@@ -15,15 +15,6 @@ Make sure you have the following installed on your machine:
 git clone https://github.com/EvanHuang7/league_code_test
 ```
 
-### <a name="install-packages">⭐ Packages Installation</a>
-
-Install the project dependencies using npm:
-
-```bash
-cd league_code_test
-go mod tidy
-```
-
 ### <a name="running-project">⭐ Running the Project</a>
 
 Open **a terminal window** and run the following commands to start the project:
@@ -53,7 +44,7 @@ curl -F 'file=@matrix.csv' "localhost:8080/multiply"
 
 ### <a name="running-test">⭐ Run All Tests</a>
 
-Open **a terminal window** and run the following commands to run all tests:
+Open **a terminal window** and run the following commands to run all tests in `endpoints_test.go` and `utils_test.go` files:
 
 ```bash
 cd league_code_test
