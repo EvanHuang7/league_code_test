@@ -8,11 +8,6 @@ import (
 	"strings"
 )
 
-// Run with
-//		go run .
-// Send request with:
-//		curl -F 'file=@matrix.csv' "localhost:8080/echo"
-
 // Return the matrix as a string in matrix format
 func EchoHandler(w http.ResponseWriter, r *http.Request) {
 	// 1st Step: get matrix from csv file
