@@ -17,7 +17,11 @@ func ParseCSVFile(r *http.Request) ([][]string, error) {
 	defer file.Close()
 
 	// Read all records from csv file
-	records, err := csv.NewReader(file).ReadAll()
+	reader := csv.NewReader(file)
+	// Disable automatic field count checking to allow different row length and header cases
+	// since we check them in latter ValidateSquareMatrix() to return more specific error.
+    reader.FieldsPerRecord = -1
+    records, err := reader.ReadAll()
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse csv: %v", err)
 	}
