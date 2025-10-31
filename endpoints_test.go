@@ -73,13 +73,13 @@ func (s *EndpointTestSuite) TestEchoEndpoint() {
 			name:                   "matrix with header",
 			filePath:               "testdata/header.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "failed to parse csv: record on line 2",
+			expectedResponseSubstr: "matrix has a header row or non-integer value at row 1, column 1",
 		},
 		{
 			name:                   "matrix has different row length",
 			filePath:               "testdata/different_row_length.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "failed to parse csv: record on line 2: wrong number of fields",
+			expectedResponseSubstr: "matrix is not square: row 2 has 2 columns, expected 3",
 		},
 		{
 			name:                   "matrix with empty value",
@@ -97,13 +97,13 @@ func (s *EndpointTestSuite) TestEchoEndpoint() {
 			name:                   "matrix has more rows than columns",
 			filePath:               "testdata/more_rows_than_cols.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "matrix is not square",
+			expectedResponseSubstr: "matrix is not square: 3 rows and 2 columns",
 		},
 		{
 			name:                   "matrix has more columns than rows",
 			filePath:               "testdata/more_cols_than_rows.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "matrix is not square",
+			expectedResponseSubstr: "matrix is not square: 2 rows and 3 columns",
 		},
 	}
 
@@ -158,13 +158,13 @@ func (s *EndpointTestSuite) TestInvertEndpoint() {
 			name:                   "matrix with header",
 			filePath:               "testdata/header.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "failed to parse csv: record on line 2",
+			expectedResponseSubstr: "matrix has a header row or non-integer value at row 1, column 1",
 		},
 		{
 			name:                   "matrix has different row length",
 			filePath:               "testdata/different_row_length.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "failed to parse csv: record on line 2: wrong number of fields",
+			expectedResponseSubstr: "matrix is not square: row 2 has 2 columns, expected 3",
 		},
 		{
 			name:                   "matrix with empty value",
@@ -182,13 +182,13 @@ func (s *EndpointTestSuite) TestInvertEndpoint() {
 			name:                   "matrix has more rows than columns",
 			filePath:               "testdata/more_rows_than_cols.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "matrix is not square",
+			expectedResponseSubstr: "matrix is not square: 3 rows and 2 columns",
 		},
 		{
 			name:                   "matrix has more columns than rows",
 			filePath:               "testdata/more_cols_than_rows.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "matrix is not square",
+			expectedResponseSubstr: "matrix is not square: 2 rows and 3 columns",
 		},
 	}
 
@@ -243,13 +243,13 @@ func (s *EndpointTestSuite) TestFlattenEndpoint() {
 			name:                   "matrix with header",
 			filePath:               "testdata/header.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "failed to parse csv: record on line 2",
+			expectedResponseSubstr: "matrix has a header row or non-integer value at row 1, column 1",
 		},
 		{
 			name:                   "matrix has different row length",
 			filePath:               "testdata/different_row_length.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "failed to parse csv: record on line 2: wrong number of fields",
+			expectedResponseSubstr: "matrix is not square: row 2 has 2 columns, expected 3",
 		},
 		{
 			name:                   "matrix with empty value",
@@ -267,13 +267,13 @@ func (s *EndpointTestSuite) TestFlattenEndpoint() {
 			name:                   "matrix has more rows than columns",
 			filePath:               "testdata/more_rows_than_cols.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "matrix is not square",
+			expectedResponseSubstr: "matrix is not square: 3 rows and 2 columns",
 		},
 		{
 			name:                   "matrix has more columns than rows",
 			filePath:               "testdata/more_cols_than_rows.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "matrix is not square",
+			expectedResponseSubstr: "matrix is not square: 2 rows and 3 columns",
 		},
 	}
 
@@ -329,13 +329,13 @@ func (s *EndpointTestSuite) TestSumEndpoint() {
 			name:                   "matrix with header",
 			filePath:               "testdata/header.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "failed to parse csv: record on line 2",
+			expectedResponseSubstr: "matrix has a header row or non-integer value at row 1, column 1",
 		},
 		{
 			name:                   "matrix has different row length",
 			filePath:               "testdata/different_row_length.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "failed to parse csv: record on line 2: wrong number of fields",
+			expectedResponseSubstr: "matrix is not square: row 2 has 2 columns, expected 3",
 		},
 		{
 			name:                   "matrix with empty value",
@@ -353,13 +353,13 @@ func (s *EndpointTestSuite) TestSumEndpoint() {
 			name:                   "matrix has more rows than columns",
 			filePath:               "testdata/more_rows_than_cols.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "matrix is not square",
+			expectedResponseSubstr: "matrix is not square: 3 rows and 2 columns",
 		},
 		{
 			name:                   "matrix has more columns than rows",
 			filePath:               "testdata/more_cols_than_rows.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "matrix is not square",
+			expectedResponseSubstr: "matrix is not square: 2 rows and 3 columns",
 		},
 	}
 
@@ -414,13 +414,13 @@ func (s *EndpointTestSuite) TestMultiplyEndpoint() {
 			name:                   "matrix with header",
 			filePath:               "testdata/header.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "failed to parse csv: record on line 2",
+			expectedResponseSubstr: "matrix has a header row or non-integer value at row 1, column 1",
 		},
 		{
 			name:                   "matrix has different row length",
 			filePath:               "testdata/different_row_length.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "failed to parse csv: record on line 2: wrong number of fields",
+			expectedResponseSubstr: "matrix is not square: row 2 has 2 columns, expected 3",
 		},
 		{
 			name:                   "matrix with empty value",
@@ -438,13 +438,13 @@ func (s *EndpointTestSuite) TestMultiplyEndpoint() {
 			name:                   "matrix has more rows than columns",
 			filePath:               "testdata/more_rows_than_cols.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "matrix is not square",
+			expectedResponseSubstr: "matrix is not square: 3 rows and 2 columns",
 		},
 		{
 			name:                   "matrix has more columns than rows",
 			filePath:               "testdata/more_cols_than_rows.csv",
 			expectedStatusCode:     400,
-			expectedResponseSubstr: "matrix is not square",
+			expectedResponseSubstr: "matrix is not square: 2 rows and 3 columns",
 		},
 	}
 
